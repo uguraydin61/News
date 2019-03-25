@@ -15,6 +15,8 @@ namespace Entity
         public string Surname { get; set; }
         public string Mail { get; set; }
         public string About { get; set; }
+        public string Image { get; set; }
+        public int Views { get; set; }
         public virtual List<Article> Articles { get; set; }
     }
 }

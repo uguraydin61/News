@@ -15,7 +15,7 @@ namespace Entity
         [ForeignKey("Authors")]
         public int AuthorId { get; set; }
         public string Head { get; set; }
-        public string Image { get; set; }
+        public string Picture { get; set; }
         public string Paragraph { get; set; }
         public int Year { get; set; }
         public string Mounth { get; set; }
