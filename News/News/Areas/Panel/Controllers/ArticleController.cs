@@ -10,62 +10,54 @@ namespace News.Areas.Panel.Controllers
 {
     public class ArticleController : Controller
     {
-        // GET: Panel/Article
+
         UnitOfWork _uw = new UnitOfWork();
-        // GET: Marka
-        public ActionResult Index(int? sil)
+  
+        public ActionResult Index(int? deleted)
         {
 
-            if (Session["Giris"] == null)
+            if (deleted.HasValue)
             {
-
-                return RedirectToAction("Index", "Login");
+                _uw.ArticleRep.Clear(deleted.Value);
 
             }
-            if (sil.HasValue)
-            {
-                _uw.ArticleRep.Sil(sil.Value);
-
-            }
-            return View(_uw.ArticleRep.HepsiniGetir());
+            return View(_uw.ArticleRep.BringItAll());
         }
         [HttpGet]
-        public ActionResult Yeni()
+        public ActionResult New()
         {
-            ViewBag.Gruplar = _uw.ArticleRep.HepsiniGetir();
+            ViewBag.Groups = _uw.ArticleRep.BringItAll();
             return View();
         }
 
         [HttpPost]
-        public ActionResult Yeni(Article gelen)
+        public ActionResult New(Article Coming)
         {
             if (ModelState.IsValid)
             {
-                _uw.ArticleRep.Ekle(gelen);
+                _uw.ArticleRep.Add(Coming);
                 return RedirectToAction("Index");
             }
-            return View(gelen);
+            return View(Coming);
         }
-        //Marka/Duzenle/5
-        //{controller}/{action}/{id}
 
         [HttpGet]
-        public ActionResult Duzenle(int id)
+        public ActionResult Edit(int id)
         {
-            ViewBag.Gruplar = _uw.ArticleRep.HepsiniGetir();
-            return View(_uw.ArticleRep.BirTaneGetir(id));
+            ViewBag.Groups = _uw.ArticleRep.BringItAll();
+            return View(_uw.ArticleRep.BringOne(id));
         }
 
         [HttpPost]
-        public ActionResult Duzenle(Article yeni)
+        public ActionResult Edit(Article newObject)
         {
             if (ModelState.IsValid)
             {
-                _uw.ArticleRep.Guncelle(yeni);
+                _uw.ArticleRep.Update(newObject);
                 return RedirectToAction("Index");
             }
 
-            return View(yeni);
+            return View(newObject);
         }
     }
 }

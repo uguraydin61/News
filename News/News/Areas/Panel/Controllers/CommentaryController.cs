@@ -10,66 +10,53 @@ namespace News.Areas.Panel.Controllers
 {
     public class CommentaryController : Controller
     {
-        // GET: Panel/Commentary
         UnitOfWork _uw = new UnitOfWork();
 
-
-
-
-        // GET: Marka
-        public ActionResult Index(int? sil)
+        public ActionResult Index(int? deleted)
         {
 
-            if (Session["Giris"] == null)
+            if (deleted.HasValue)
             {
-
-                return RedirectToAction("Index", "Login");
+                _uw.CommentaryRep.Clear(deleted.Value);
 
             }
-            if (sil.HasValue)
-            {
-                _uw.CommentaryRep.Sil(sil.Value);
-
-            }
-            return View(_uw.CommentaryRep.HepsiniGetir());
+            return View(_uw.CommentaryRep.BringItAll());
         }
         [HttpGet]
-        public ActionResult Yeni()
+        public ActionResult New()
         {
-            ViewBag.Gruplar = _uw.CommentaryRep.HepsiniGetir();
+            ViewBag.Groups = _uw.CommentaryRep.BringItAll();
             return View();
         }
 
         [HttpPost]
-        public ActionResult Yeni(Commentary gelen)
+        public ActionResult New(Commentary Coming)
         {
             if (ModelState.IsValid)
             {
-                _uw.CommentaryRep.Ekle(gelen);
+                _uw.CommentaryRep.Add(Coming);
                 return RedirectToAction("Index");
             }
-            return View(gelen);
+            return View(Coming);
         }
-        //Marka/Duzenle/5
-        //{controller}/{action}/{id}
 
         [HttpGet]
-        public ActionResult Duzenle(int id)
+        public ActionResult Edit(int id)
         {
-            ViewBag.Gruplar = _uw.CommentaryRep.HepsiniGetir();
-            return View(_uw.CommentaryRep.BirTaneGetir(id));
+            ViewBag.Groups = _uw.CommentaryRep.BringItAll();
+            return View(_uw.CommentaryRep.BringOne(id));
         }
 
         [HttpPost]
-        public ActionResult Duzenle(Commentary yeni)
+        public ActionResult Edit(Commentary newObject)
         {
             if (ModelState.IsValid)
             {
-                _uw.CommentaryRep.Guncelle(yeni);
+                _uw.CommentaryRep.Update(newObject);
                 return RedirectToAction("Index");
             }
 
-            return View(yeni);
+            return View(newObject);
         }
     }
 }

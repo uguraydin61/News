@@ -15,36 +15,36 @@ namespace BLL
         {
             NewsContext db;
 
-            public BaseRepository(NewsContext gelendb)
+            public BaseRepository(NewsContext FromDb)
             {
-                db = gelendb;
+                db = FromDb;
             }
 
-            public virtual List<T> HepsiniGetir()
+            public virtual List<T> BringItAll()
             {
                 return db.Set<T>().ToList();
             }
-            public virtual T BirTaneGetir(int id)
+            public virtual T BringOne(int id)
             {
                 return db.Set<T>().Find(id);
             }
-            public virtual void Ekle(T yeni)
+            public virtual void Add(T newObject)
             {
-                db.Set<T>().Add(yeni);
+                db.Set<T>().Add(newObject);
                 db.SaveChanges();
             }
-            public virtual void Sil(int id)
+            public virtual void Clear(int id)
             {
-                var silinecek = BirTaneGetir(id);
-                db.Set<T>().Remove(silinecek);
+                var deleted =BringOne(id);
+                db.Set<T>().Remove(deleted);
                 db.SaveChanges();
             }
-            public virtual void Guncelle(IEntity yeni)
+            public virtual void Update(IEntity newObject)
              {
-                 var eski = BirTaneGetir(yeni.Id);
+                 var old = BringOne(newObject.Id);
 
-                 db.Entry(eski).CurrentValues.SetValues(yeni);
-                 db.Entry(eski).State = EntityState.Modified;
+                 db.Entry(old).CurrentValues.SetValues(newObject);
+                 db.Entry(old).State = EntityState.Modified;
                  db.SaveChanges();
              }
         }
