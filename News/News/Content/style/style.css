@@ -730,9 +730,9 @@ h6
 }
 .sf-menu li.submenu a
 {
-	background-image: url("../images/icons/navigation/menu_arrow.png");
+	/*background-image: url("../images/icons/navigation/menu_arrow.png");*/
 	background-repeat: no-repeat;
-	background-position: center right; /* background-position: 18px right; */
+	background-position: center right;  background-position: 18px right; 
 	background-color: transparent;
 	padding-right: 15px;
 	border-right: 15px solid transparent;

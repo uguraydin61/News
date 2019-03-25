@@ -152,11 +152,11 @@
     <Compile Include="Areas\Panel\Controllers\CommentaryController.cs" />
     <Compile Include="Areas\Panel\Controllers\WriterController.cs" />
     <Compile Include="Areas\Panel\PanelAreaRegistration.cs" />
-    <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ConversationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JournalController.cs" />
+    <Compile Include="Controllers\YazarController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -659,8 +659,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Author\Index.cshtml" />
     <Content Include="Views\Conversation\Index.cshtml" />
+    <Content Include="Views\Yazar\Liste.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
