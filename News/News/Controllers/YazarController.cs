@@ -21,10 +21,10 @@ namespace News.Controllers
         }
         public ActionResult Editor(int id)
         {
-
-            Authors Author = _uw.AuthorsRep.BringOne(id);
-            return View(Author);
-
+            Authors author = _uw.AuthorsRep.BringOne(id);
+            List<Article> articleList = _uw.ArticleRep.BringItAll();
+            ViewBag.articles = articleList;
+            return View(author);
         }
     }
 }
