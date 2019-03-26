@@ -10,15 +10,20 @@ namespace News.Controllers
 {
     public class YazarController : Controller
     {
-        // GET: Yazar
         UnitOfWork _uw = new UnitOfWork();
 
         public ActionResult Liste()
         {
 
             List<Authors> AuthorList = _uw.AuthorsRep.BringItAll();
-
             return View(AuthorList);
+
+        }
+        public ActionResult Editor(int id)
+        {
+
+            Authors Author = _uw.AuthorsRep.BringOne(id);
+            return View(Author);
 
         }
     }
