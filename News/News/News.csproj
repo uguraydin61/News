@@ -662,6 +662,7 @@
     <Content Include="Views\Conversation\Index.cshtml" />
     <Content Include="Views\Yazar\Liste.cshtml" />
     <Content Include="Views\Yazar\Editor.cshtml" />
+    <Content Include="Views\Yazar\_MostRead.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -21,10 +21,18 @@ namespace News.Controllers
         }
         public ActionResult Editor(int id)
         {
+
             Authors author = _uw.AuthorsRep.BringOne(id);
-            List<Article> articleList = _uw.ArticleRep.BringItAll();
+            List<Article> articleList = _uw.ArticleRep.BringItAll().Where(x => x.AuthorId == id).ToList();
             ViewBag.articles = articleList;
             return View(author);
+        }
+        public ActionResult _MostRead()
+        {
+
+            List<Article> articles = _uw.ArticleRep.BringItAll().Take(5).OrderByDescending(x => x.ClickNumber).ToList();
+          
+            return View(articles);
         }
     }
 }
