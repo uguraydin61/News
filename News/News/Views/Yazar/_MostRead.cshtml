@@ -27,7 +27,7 @@
 					</a>
 					<div class="post_content">
 						<span class="number animated_element" data-value="6 257"></span>
-						<h5><a href="post_small_image.html" title="New Painkiller Rekindles Addiction Concerns">@Model.First().Paragraph.Substring(0,80)</a></h5>
+						<h5><a href="post_small_image.html" title="New Painkiller Rekindles Addiction Concerns">@Model.First().Paragraph.Substring(0, 80)</a></h5>
 						<ul class="post_details simple">
 							<li class="category"><a href="category_health.html" title="HEALTH">HEALTH</a></li>
 						</ul>
@@ -57,48 +57,25 @@
 					</a>
 					<div class="post_content">
 						<span class="number animated_element" data-value="70"></span>
-						<h5><a href="post.html" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h5>
+						<h5><a href="post.html" title="New Painkiller Rekindles Addiction Concerns">@ViewBag.MostArticle.Paragraph.Substring(0, 80)</a></h5>
 						<ul class="post_details simple">
 							<li class="category"><a href="category_health.html" title="HEALTH">HEALTH</a></li>
 						</ul>
 					</div>
 				</li>
-				<li class="post">
-					<div class="post_content">
-						<span class="number animated_element" data-value="62"></span>
-						<h5><a href="post.html" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h5>
-						<ul class="post_details simple">
-							<li class="category"><a href="category_world.html" title="WORLD">WORLD</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="post">
-					<div class="post_content">
-						<span class="number animated_element" data-value="30"></span>
-						<h5><a href="post_quote_2.html" title="Seeking the Right Chemistry, Drug Makers Hunt for Mergers">Seeking the Right Chemistry, Drug Makers Hunt for Mergers</a></h5>
-						<ul class="post_details simple">
-							<li class="category"><a href="category_sports.html" title="SPORTS">SPORTS</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="post">
-					<div class="post_content">
-						<span class="number animated_element" data-value="25"></span>
-						<h5><a href="post.html" title="Study Linking Illnes and Salt Leaves Researchers Doubtful">Study Linking Illnes and Salt Leaves Researchers Doubtful</a></h5>
-						<ul class="post_details simple">
-							<li class="category"><a href="category_science.html" title="SCIENCE">SCIENCE</a></li>
-						</ul>
-					</div>
-				</li>
-				<li class="post">
-					<div class="post_content">
-						<span class="number animated_element" data-value="4"></span>
-						<h5><a href="post.html" title="Syrian Civilians Trapped for Months Continue to be Evacuated">Syrian Civilians Trapped for Months Continue to be Evacuated</a></h5>
-						<ul class="post_details simple">
-							<li class="category"><a href="category_science.html" title="SCIENCE">SCIENCE</a></li>
-						</ul>
-					</div>
-				</li>
+				@foreach (var item in ViewBag.MostArticles)
+				{
+					<li class="post">
+						<div class="post_content">
+							<span class="number animated_element" data-value="62"></span>
+							<h5><a href="post.html" title="New Painkiller Rekindles Addiction Concerns">@item.Paragraph.Substring(0, 40)</a></h5>
+							<ul class="post_details simple">
+								<li class="category"><a href="category_world.html" title="WORLD">WORLD</a></li>
+							</ul>
+						</div>
+					</li>
+				}
+
 			</ul>
 			<a class="more page_margin_top" href="#">SHOW MORE</a>
 		</div>
