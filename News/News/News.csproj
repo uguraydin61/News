@@ -152,11 +152,11 @@
     <Compile Include="Areas\Panel\Controllers\CommentaryController.cs" />
     <Compile Include="Areas\Panel\Controllers\WriterController.cs" />
     <Compile Include="Areas\Panel\PanelAreaRegistration.cs" />
-    <Compile Include="Controllers\ContactController.cs" />
-    <Compile Include="Controllers\ConversationController.cs" />
+    <Compile Include="Controllers\DergimizController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\JournalController.cs" />
+    <Compile Include="Controllers\SoylesiController.cs" />
     <Compile Include="Controllers\YazarController.cs" />
+    <Compile Include="Controllers\IletisimController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -659,11 +659,12 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Conversation\Index.cshtml" />
     <Content Include="Views\Yazar\Liste.cshtml" />
     <Content Include="Views\Yazar\Editor.cshtml" />
     <Content Include="Views\Yazar\_MostRead.cshtml" />
+    <Content Include="Views\Soylesi\Makaleler.cshtml" />
+    <Content Include="Views\Dergimiz\Hakkımızda.cshtml" />
+    <Content Include="Views\Iletisim\Adres.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -672,7 +673,6 @@
     <Folder Include="Areas\Panel\Views\Commentary\" />
     <Folder Include="Areas\Panel\Views\Shared\" />
     <Folder Include="Areas\Panel\Views\Writer\" />
-    <Folder Include="Views\Journal\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

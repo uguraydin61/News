@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace News.Controllers
 {
-    public class ContactController : Controller
+    public class DergimizController : Controller
     {
-        // GET: Contact
-        public ActionResult Index()
+        // GET: Dergimiz
+        public ActionResult Hakkımızda()
         {
             return View();
         }
