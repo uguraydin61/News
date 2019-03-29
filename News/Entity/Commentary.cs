@@ -18,7 +18,11 @@ namespace Entity
         public string Mail { get; set; }
         public string Comment { get; set; }
         public DateTime CommentDate { get; set; }
+        [ForeignKey("RepliedTo")]
+        public int? RepliedToId { get; set; } 
         public virtual Article Article { get; set; }
+        public virtual Commentary RepliedTo { get; set; }
+        public virtual List<Commentary> Replies { get; set; }
 
     }
 }

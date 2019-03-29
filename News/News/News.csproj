@@ -665,6 +665,7 @@
     <Content Include="Views\Soylesi\Makaleler.cshtml" />
     <Content Include="Views\Dergimiz\Hakkımızda.cshtml" />
     <Content Include="Views\Iletisim\Adres.cshtml" />
+    <Content Include="Views\Soylesi\Makale.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

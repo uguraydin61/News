@@ -16,7 +16,21 @@ namespace News.Controllers
         {
             List<Article> ArticleList = _uw.ArticleRep.BringItAll();
             return View(ArticleList);
-           
+
+        }
+        public ActionResult Makale(int id)
+        {
+
+            Article Article = _uw.ArticleRep.BringOne(id);
+
+            Authors author = _uw.AuthorsRep.BringOne(Article.AuthorId);
+            ViewBag.Author = author;
+
+            List<Commentary> commentaryList = _uw.CommentaryRep.BringItAll().Where(x => x.ArticleId == Article.Id && x.RepliedToId==null).ToList();
+            ViewBag.Commentary = commentaryList;
+
+            return View(Article);
+
         }
     }
 }

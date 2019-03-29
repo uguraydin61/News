@@ -23,7 +23,7 @@
 			<ul class="blog rating page_margin_top clearfix">
 				<li class="post">
 					<a href="post_small_image.html" title="Nuclear Fusion Closer to Becoming a Reality">
-						<img src='/Content/images/samples/510x187/image_12.jpg' alt='img'>
+						<img src='/Content/images/samples/510x187/@Html.Raw(Model.First().Picture+""+".jpg")' alt='img'>
 					</a>
 					<div class="post_content">
 						<span class="number animated_element" data-value="6 257"></span>
@@ -53,7 +53,7 @@
 			<ul class="blog rating page_margin_top clearfix">
 				<li class="post">
 					<a href="post.html" title="Nuclear Fusion Closer to Becoming a Reality">
-						<img src='/Content/images/samples/510x187/image_02.jpg' alt='img'>
+						<img src='/Content/images/samples/510x187/@Html.Raw(ViewBag.MostArticle.Picture+".jpg")' alt='img'>
 					</a>
 					<div class="post_content">
 						<span class="number animated_element" data-value="70"></span>

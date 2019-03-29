@@ -18,7 +18,7 @@
 	<div class="page">
 		<div class="page_header clearfix page_margin_top">
 			<div class="page_header_left">
-				<h1 class="page_title">Blog</h1>
+				<h1 class="page_title">Söyleşiler</h1>
 			</div>
 			<div class="page_header_right">
 				<ul class="bread_crumb">
@@ -50,11 +50,11 @@
 							{
 								<li class="post">
 									<a href="post.html" title="Built on Brotherhood, Club Lives Up to Name">
-										<img src='/Content/images/samples/330x242/image_10.jpg' alt='img'>
+										<img src='/Content/images/samples/330x242/@Html.Raw(item.Picture+""+".jpg")' alt='img'>
 									</a>
 									<div class="post_content">
 										<h2 class="with_number">
-											<a href="post.html" title="Built on Brotherhood, Club Lives Up to Name">Built on Brotherhood, Club Lives Up to Name</a>
+											<a href="post.html" title="Built on Brotherhood, Club Lives Up to Name">@item.Head</a>
 											<a class="comments_number" href="post.html#comments_list" title="2 comments">2<span class="arrow_comments"></span></a>
 										</h2>
 										<ul class="post_details">
@@ -64,7 +64,7 @@
 											</li>
 										</ul>
 										<p>@item.Paragraph.Substring(0,60)</p>
-										<a class="read_more" href="post.html" title="Read more"><span class="arrow"></span><span>READ MORE</span></a>
+										<a class="read_more" href="/Soylesi/Makale?id=@item.Id" title="Read more"><span class="arrow"></span><span>READ MORE</span></a>
 									</div>
 								</li>
 
